@@ -1,2 +1,2 @@
-Deployed website: http://127.0.0.1:5501/solution-hw3/index.html
+Deployed website: interactive-structures.org/teach-pui-example/
 Repository link: https://github.com/ccharlene123/teach-pui-example
