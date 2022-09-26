@@ -54,7 +54,8 @@ packChange(sizes)
 function priceChange(){
     let glazingOption = document.querySelector('#glazing-options');
     let price = document.querySelector('#price');
-    price.innerText = (basePrice + parseFloat(glazingOption.value)) * parseFloat(packOption.value);
+    let newPrice = (basePrice + parseFloat(glazingOption.value)) * parseFloat(packOption.value);
+    price.innerText = newPrice.toFixed(2);
     price.innerText = '$' + price.innerText
 }
 
@@ -62,7 +63,7 @@ let glazingOption = document.querySelector('#glazing-options');
 glazingOption.addEventListener('change', priceChange);
 
 let packOption = document.querySelector('#pack-size');
-packOption.addEventListener('change', packChange)
+packOption.addEventListener('change', priceChange)
 
 
 
