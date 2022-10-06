@@ -154,11 +154,14 @@ body {
 }
 
 .bottom-line {
-    height: 2px;
+    /* height: 2px;
     background: black;
     display: flex;
     width: 1000px;
-    flex-basis: 1000px;
+    flex-basis: 1000px; */
+    border-bottom: 2px solid black;
+    width: 1000px;
+    margin-left: 420px;
 }
 
 .bottom {

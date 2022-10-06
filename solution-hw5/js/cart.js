@@ -6,7 +6,6 @@ class Roll {
         this.basePrice = rollPrice;
     }
 }
-
 // const cart = [];
 const cart = new Set();
 
@@ -45,15 +44,12 @@ function calculatePrice(basePrice, glazingPrice, packPrice) {
     return((basePrice + glazingPrice) * packPrice);
 }
 
+
 function createCart(data) {
     // for(let i=0; i<cart.length; i++){
     for (let cartObject of cart) {
         let cartElement = document.getElementById("ItemOne");
         let docFragment = cartElement.content.cloneNode(true);
-
-        // console.log(clone);
-        // break;
-
         let clone = docFragment.querySelector('.product-one');
 
         // ARRAY SYNTAX
@@ -69,10 +65,12 @@ function createCart(data) {
         clone.querySelector(".glazeType").innerText = "Glazing: " + cartObject.glazing;
         clone.querySelector(".packSize").innerText = "Pack Size: " + cartObject.size;
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaptation[cartObject.size]); 
+        // console.log(finalPrice);
         clone.querySelector(".price").innerText = "$" + finalPrice.toFixed(2);
+        // cartTotal = cartTotal + finalPrice;
+        // document.querySelector(".cartPrice").innerText = "$" + parseFloat(cartTotal).toFixed(2);
         
         const btnDelete = clone.querySelector('.remove');
-        console.log(btnDelete);
 
         btnDelete.addEventListener('click', () => {
             // HTML Element
@@ -80,6 +78,7 @@ function createCart(data) {
 
             // Roll Object created in lines 13-16
             cart.delete(cartObject);
+            calculateTotal();
 
         });
 
@@ -87,17 +86,23 @@ function createCart(data) {
 
         
         // console.log(clone);
-
     }
+    calculateTotal();
+}
+
+function calculateTotal(){
+    let cartTotal = 0;
+    for (let cartObject of cart) {
+        finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaptation[cartObject.size]); 
+        cartTotal = cartTotal + finalPrice;
+    }
+    document.querySelector(".cartPrice").innerText = "$" + parseFloat(cartTotal).toFixed(2);
 }
 
 
-createCart(cart)
-console.log(cart)
+createCart(cart);
 
-function deleteItem(clone) {
-    clone.remove();
-    cart.delete(clone);
-  }
-
-//document.querySelector(".total-price").innerText = "$" + 
+// function deleteItem(clone) {
+//     clone.remove();
+//     cart.delete(clone);
+//   }
