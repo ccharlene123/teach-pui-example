@@ -60,7 +60,7 @@ function createCart(data) {
         // finalPrice = calculatePrice(cart[i].basePrice, glazingPrice[cart[i].glazing], priceAdaptation[cart[i].size]); 
         // clone.querySelector(".price").innerText = "$" + finalPrice.toFixed(2);
         
-        clone.querySelector(".product-thumbnails").src = "../assets/" + cartObject.type + "-cinnamon-roll.jpg";
+        clone.querySelector(".product-thumbnails").src = "../assets/" + rolls[cartObject.type].imageFile;
         clone.querySelector(".rollName").innerText = cartObject.type + " Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing: " + cartObject.glazing;
         clone.querySelector(".packSize").innerText = "Pack Size: " + cartObject.size;
