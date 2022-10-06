@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script defer src="../js/cart.js"></script>
+
+    </head>
+
+    <body>
+        <div class="main-nav">
+            <!-- includes logo, nav menu, horizontal line, and header text -->
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/logo-01.svg" alt ="Bun Bun Bakeshop Logo" width="320"/>
+                </a>
+            </div>
+            <div class="right">
+                <div class="nav">
+                    <div class="highlight">
+                        <a href="../index.html">
+                        <h1>PRODUCTS</h1>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="../html/shopping-cart.html">
+                        <h1>CART</h1>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>Shopping cart</h2>
+                </div>
+            </div>
+        </div>
+        <div class="main-cart">
+            <div class="product-one">
+                <div class="img-remove">
+                    <img class="product-thumbnails" src="../assets/original-cinnamon-roll.jpg" alt="classic cinnamon roll"
+                            width="150" />
+                    <div class="remove">
+                        <p>remove</p>
+                    </div>
+                </div>
+                 <div class="text">
+                     <div>
+                        <p>Original cinnamon roll</p>
+                    </div>
+                    <div>
+                        <p>Glazing: Keep original</p>
+                    </div>
+                    <div>
+                        <p>Pack size: 1</p>
+                    </div>
+                </div>
+                <div class="price">
+                    <p>$2.49</p>
+                </div>
+            </div>
+            <div class="product-two">
+                <div class="img-remove">
+                    <img class="product-thumbnails" src="../assets/double-chocolate-cinnamon-roll.jpg" alt="Double Chocolate Cinnamon Roll" width="150"/>
+                    <div class="remove">
+                        <p>remove</p>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>Double chocolate cinnamon roll</p>
+                    <p>Glazing: Sugar milk</p>
+                    <p>Pack size: 6</p>
+                </div>
+                <div class="price">
+                    <p>$27.45</p>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <hr class="bottom-line">
+        </div>
+        <div class="bottom">
+            <!-- includes total, total price, and checkout button -->
+            <div class="total">
+                <p>Total</p>
+            </div>
+            <div class="total-price">
+                <p>$29.94</p>
+            </div>
+        </div>  
+
+        <div class="checkout">
+            <button type="button">Checkout</button>
+        </div>
+
+        <template id="ItemOne">
+            <div class="product-one">
+                <div class="img-remove">
+                    <img class="product-thumbnails" src="../assets/original-cinnamon-roll.jpg" alt="classic cinnamon roll"
+                            width="150" />
+                    <div class="remove">
+                        <p>remove</p>
+                    </div>
+                </div>
+                 <div class="text">
+                     <div>
+                        <p class="rollName">Original cinnamon roll</p>
+                        <p class="glazeType">Glazing: Keep original</p>
+                        <p class="packSize">Pack size: 1</p>
+                    </div>
+                </div>
+                <div class="price">
+                    <p>$2.49</p>
+                </div>
+            </div>
+        </template>
+
+    </body>
+    
+</html>
