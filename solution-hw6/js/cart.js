@@ -6,25 +6,26 @@ class Roll {
         this.basePrice = rollPrice;
     }
 }
-// const cart = [];
+
 const cart = new Set();
 
-let rollOne = new Roll('Original', 'Sugar Milk', 1, 2.49);
+//new from hw 6
+function addNewRoll() {
+    const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
+    cart.add(newRoll);
+    return newRoll;
+}
+
+//below is taken out for hw 6
+/* let rollOne = new Roll('Original', 'Sugar Milk', 1, 2.49);
 let rollTwo = new Roll('Walnut', 'Vanilla Milk', 12, 3.49);
 let rollThree = new Roll('Raisin', 'Sugar Milk', 3, 2.99);
 let rollFour = new Roll('Apple', 'Keep Original', 3, 3.49);
 
-// arrays
-// cart.push(rollOne);
-// cart.push(rollTwo);
-// cart.push(rollThree);
-// cart.push(rollFour);
-
-// set
 cart.add(rollOne);
 cart.add(rollTwo);
 cart.add(rollThree);
-cart.add(rollFour);
+cart.add(rollFour); */
 
 let priceAdaptation = {
     1:1,
@@ -44,17 +45,24 @@ function calculatePrice(basePrice, glazingPrice, packPrice) {
     return((basePrice + glazingPrice) * packPrice);
 }
 
-
 function createCart(data) {
     for (let cartObject of cart) {
         let cartElement = document.getElementById("ItemOne");
         let docFragment = cartElement.content.cloneNode(true);
         let clone = docFragment.querySelector('.product-one');
         
-        clone.querySelector(".product-thumbnails").src = "../assets/" + rolls[cartObject.type].imageFile;
-        clone.querySelector(".rollName").innerText = cartObject.type + " Cinnamon Roll";
-        clone.querySelector(".glazeType").innerText = "Glazing: " + cartObject.glazing;
-        clone.querySelector(".packSize").innerText = "Pack Size: " + cartObject.size;
+        const productThumbnail = clone.querySelector(".product-thumbnails");
+        productThumbnail.src = "../assets/" + rolls[cartObject.type].imageFile;
+
+        const rollName = clone.querySelector(".rollName");
+        rollName.innerText = cartObject.type + " Cinnamon Roll";
+
+        const glazeType = clone.querySelector(".glazeType");
+        glazeType.innerText = "Glazing: " + cartObject.glazing;
+
+        const packSize = clone.querySelector(".packSize");
+        packSize.innerText = "Pack Size: " + cartObject.size;
+        
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaptation[cartObject.size]); 
         clone.querySelector(".price").innerText = "$" + finalPrice.toFixed(2);
         
@@ -67,13 +75,11 @@ function createCart(data) {
             // Roll Object created in lines 13-16
             cart.delete(cartObject);
             calculateTotal();
-
+            saveToLocalStorage();
         });
 
         document.querySelector(".main-cart").appendChild(clone);
 
-        
-        // console.log(clone);
     }
     calculateTotal();
 }
@@ -87,10 +93,17 @@ function calculateTotal(){
     document.querySelector(".cartPrice").innerText = "$" + parseFloat(cartTotal).toFixed(2);
 }
 
+// HW 6 additions
 
-createCart(cart);
+function retrieveFromLocalStorage() {
+    const cartArrayString = localStorage.getItem('cartItems');
+    const cartArray = JSON.parse(cartArrayString);
+    for (const cartData of cartArray) {
+        const newRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+        createCart(cart); 
+    }
+}
 
-// function deleteItem(clone) {
-//     clone.remove();
-//     cart.delete(clone);
-//   }
+if (localStorage.getItem('cartItems') != null) {
+    retrieveFromLocalStorage();
+}

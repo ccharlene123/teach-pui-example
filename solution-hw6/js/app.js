@@ -72,16 +72,16 @@ const cart = [];
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
-const rollType = params.get("roll");
+const bunType = params.get("roll");
 
 const nameElement = document.querySelector('#product-name');
-nameElement.innerText = rollType + ' cinnamon roll'
+nameElement.innerText = bunType + ' cinnamon roll'
 
-const basePrice = rolls[rollType].basePrice;
+const basePrice = rolls[bunType].basePrice;
 priceChange();
 
 const rollImage = document.querySelector('.product-image');
-rollImage.src = '../assets/' + rolls[rollType].imageFile;
+rollImage.src = '../assets/' + rolls[bunType].imageFile;
 
 //add to cart
 
@@ -92,12 +92,22 @@ class Roll {
         this.size = packSize;
         this.basePrice = basePrice;
     }
-    
 }
 
 function addToCart(){
     const newRoll = new Roll(rollType, glazingOption.options[glazingOption.selectedIndex].text, packOption.options[packOption.selectedIndex].text, basePrice);
     cart.push(newRoll);
     console.log(cart);
+    saveToLocalStorage();
 }
 
+//hw 6 additions
+
+function saveToLocalStorage() {
+    const cartArrayString = JSON.stringify(cart);
+    console.log(cartArrayString);
+
+    localStorage.setItem('cartItems', cartArrayString);
+}
+
+saveToLocalStorage()
