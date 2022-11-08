@@ -95,7 +95,7 @@ class Roll {
 }
 
 function addToCart(){
-    const newRoll = new Roll(rollType, glazingOption.options[glazingOption.selectedIndex].text, packOption.options[packOption.selectedIndex].text, basePrice);
+    const newRoll = new Roll(bunType, glazingOption.options[glazingOption.selectedIndex].text, packOption.options[packOption.selectedIndex].text, basePrice);
     cart.push(newRoll);
     console.log(cart);
     saveToLocalStorage();
@@ -110,4 +110,14 @@ function saveToLocalStorage() {
     localStorage.setItem('cartItems', cartArrayString);
 }
 
-saveToLocalStorage()
+function retrieveFromLocalStorage() {
+    const cartArrayString = localStorage.getItem('cartItems');
+    const cartArray = JSON.parse(cartArrayString);
+    for (const cartData of cartArray) {
+        const newRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+    }
+}
+
+if (localStorage.getItem('cartItems') != null) {
+    retrieveFromLocalStorage();
+}

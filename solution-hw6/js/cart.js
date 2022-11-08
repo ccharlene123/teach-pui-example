@@ -10,8 +10,8 @@ class Roll {
 const cart = new Set();
 
 //new from hw 6
-function addNewRoll() {
-    const newRoll = new Roll(rollType, rollGlazing, packSize, rollPrice);
+function addNewRoll(bunType, rollGlazing, packSize, rollPrice) {
+    const newRoll = new Roll(bunType, rollGlazing, packSize, rollPrice);
     cart.add(newRoll);
     return newRoll;
 }
@@ -100,8 +100,8 @@ function retrieveFromLocalStorage() {
     const cartArray = JSON.parse(cartArrayString);
     for (const cartData of cartArray) {
         const newRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
-        createCart(cart); 
     }
+    createCart(cart); 
 }
 
 if (localStorage.getItem('cartItems') != null) {
