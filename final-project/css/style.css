@@ -8,8 +8,8 @@ h1 {
     font-size: 100px;
     line-height: 75%;
     -webkit-text-fill-color: rgb(52, 52, 52);
-    -webkit-text-stroke: 2px rgb(254, 254, 254);
-    width: 800px;
+    -webkit-text-stroke: 1px rgb(254, 254, 254);
+    width: 100%;
 }
 
 .header{
@@ -27,6 +27,11 @@ h2 {
 p{
     font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-size: 30px;
+}
+
+p2{
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    font-size: 20px;
 }
 
 .left {
@@ -80,10 +85,12 @@ p{
 .main{
     display: flex;
     flex-direction: column;
+    width:100%;
 }
 
 .top{
     display: flex;
+    width: 100%;
 }
 
 .bottom{
@@ -140,4 +147,16 @@ p{
 
   .analysis-page{
     background-color: #FFE5B2;
+  }
+
+  .at-a-glance{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+  }
+
+  .analysis-header{
+    text-align: center;
+    width: 100%;
   }
