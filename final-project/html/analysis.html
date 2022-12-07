@@ -12,13 +12,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-        <script src="../js/app.js"></script>
+        <script defer src="../js/ingredientsData.js"></script>
+        <script defer src="../js/app.js"></script>
 
     </head>
 
     <body class="analysis-page">
         <div class="main">
-            <div class="top">
+            <div class="analysis-top">
                 <div class="back">
                     <a href="sushi-builder.html">
                         <img src="../assets/back-button.png" alt="button to go back" width="100px">
@@ -29,18 +30,41 @@
                 </div>
             </div>
 
-            <img src="../assets/finished-burrito.png" alt="a wrapped up sushi burrito" width="450px">
-
             <div class="at-a-glance">
 
-                <div>
-                    <p>Your sushi-rrito at a glance...</p>
+                <div id="analysis-h2">
+                    <h2>Your sushi-rrito at a glance...</h2>
                 </div>
 
-                <div id="overview">
-                    <h2>Overview</h2>
-                    <p2>The biggest source of  carbon dioxide emissions in your sushi-rrito came from _____. The reason why ____ emits so much carbon dioxide is the fact that it travels long distances and the shipping process uses a lot of CO2. The greatest source of water came from _____, which is due to the amount of water it takes to clean the ingredient. Additionally, _____ tends to be high in mercury, which has negative health effects and should be consumed minimally. Experiment with different ingredients to see which ones cause the least amount of damage to your health and the environment!</p>
+                <div class="hero-box">
+                    <div>
+                        <img src="../assets/finished-burrito.png" class="burrito" alt="a sushi burrito wrapped in foil">
+                    </div>
+                    <div>
+                        <p2>Used ___g of carbon dioxide</p2><br>
+                        <p2>Used ___ types of fish or fish byproducts</p2><br>
+                        <p2>Contained ____ non-vegetarian ingredients</p2>
+                    </div>
                 </div>
+                    
+                <div id="overview">
+                    <div>
+                        <h2>Overview</h2>
+                        <p2>The biggest source of carbon dioxide emissions in your sushi-rrito came from _____. 
+                            In general, fish ingredients tend to have a lower carbon footprint compared to meat ingredients 
+                            such as beef. However, vegetarian ingredients have the lowest carbon footprint of them all 
+                            and consuming vegetarian ingredients tends to have the least negative impact on the environment. 
+                            Additionally, fish and fish byproduct ingredients can be high in chemicals such as mercury, 
+                            which are detrimental to your health and should not be consumed in excess. Consider swapping 
+                            out fish or meat ingredients for vegetarian ingredients the next time you eat out to minimize 
+                            negative health and environmental impacts!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="start-over">
+                <a href="sushi-builder.html">
+                    <img src="../assets/start-over.png" alt="press here to start over" width="200px"/>
+                </a>
             </div>
         </div>
     </body>

@@ -24,14 +24,15 @@ h2 {
     margin: 15px 5px 5px 25px;
 }
 
+#analysis-h2{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    margin: 15px 5px 5px 25px;
+    text-align: center;
+}
+
 p{
     font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-size: 30px;
-}
-
-p2{
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
-    font-size: 20px;
 }
 
 .left {
@@ -116,6 +117,8 @@ p2{
     margin: 30px 40px 20px 40px;
     height: 400px;
     width: 750px;
+    display: flex;
+    justify-content: center;
 }
 
 #scroll{
@@ -143,20 +146,78 @@ p2{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(255, 235, 235); 
-  }
+}
 
-  .analysis-page{
-    background-color: #FFE5B2;
-  }
+.analysis-page{
+    background-color: #F5DFBE;
+}
 
-  .at-a-glance{
+.at-a-glance{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     margin: auto;
-  }
+}
 
-  .analysis-header{
+.analysis-header{
     text-align: center;
     width: 100%;
-  }
+}
+
+.hero-box{
+    background-color: #FFFBEF;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    width: 600px;
+    height: 300px;
+    border-radius: 15px;
+    align-self: center;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overview{
+    display: flex;
+}
+
+p2{
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    font-size: 20px;
+}
+
+.burrito{
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.analysis-top{
+    height: 220px;
+}
+
+#start-over{
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+.falling{
+    transform: translateY(0);
+    animation-name: ingredientfall;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    /* animation-play-state: paused; */
+}
+
+@keyframes ingredientfall {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(240px);
+    }
+}
