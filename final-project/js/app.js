@@ -8,6 +8,24 @@ class Ingredient {
     }
 }
 
+function runAnimation(button){
+    let animationImg = document.querySelector('.fallingImg');
+    let key = button.querySelector('p').innerText;
+    console.log(key);
+    console.log(ingredients[key])
+    animationImg.src = '../assets/' + ingredients[key].imageFile;
+    document.getElementById("falling").style.animationPlayState = "running";
+}
+
+/*
+
+let ingredient = document.querySelector('.ingredient');
+ingredient.addEventListener('click', runAnimation);
+
+$('.ingredient').onClick(function(){
+    $('.builder').addClass('.falling');
+});
+
 let IngredientsArray = [
     new Ingredient('soy wrap', 'soy-wrap', 10, false, true),
     new Ingredient('seaweed wrap', 'seaweed-wrap', 15, false, true),
@@ -32,22 +50,6 @@ let IngredientsArray = [
     new Ingredient('tempura flakes', 'tempura-flakes', 8, false, true),
 ]
 
-function runAnimation(){
-    let animationImg = document.querySelector('.fallingImg');
-    let key = document.querySelector('.falling').innerText;
-    animationImg.src = '../assets/' + ingredients[key].imageFile;
-    document.getElementById("falling").style.animationPlayState = "running";
-}
-
-/*
-
-let ingredient = document.querySelector('.ingredient');
-ingredient.addEventListener('click', runAnimation);
-
-$('.ingredient').onClick(function(){
-    $('.builder').addClass('.falling');
-});
-
 const cart = [];
 
 const queryString = window.location.search;
@@ -70,6 +72,10 @@ function addToCart(){
     saveToLocalStorage();
 }
 
+//session storage: (use remove item from session storage when start over button is clicked)
+sessionStorage.setItem("lastname", "Smith");
+sessionStorage.getItem("lastname");
+
 function saveToLocalStorage() {
     const cartArrayString = JSON.stringify(cart);
     console.log(cartArrayString);
@@ -89,4 +95,12 @@ if (localStorage.getItem('cartItems') != null) {
     retrieveFromLocalStorage();
 }
 }
+
+make variables for co2, fish, and vegetarian
+
+let carbonDioxide = 
+
+"used" + co2 + "g carbon dioxide"
+"Used" + fish + " types of fish or fish byproducts"
+"Used" + veggie + " types of vegetarian ingredients"
 */
