@@ -77,6 +77,10 @@ p{
     justify-content: space-around;
 }
 
+.ingredient:hover{
+    background-color: #ffdd99;
+}
+
 .ingredient-row{
     display: flex;
     flex-direction: row;
@@ -114,7 +118,7 @@ p{
 }
 
 .builder{
-    margin: 30px 40px 20px 40px;
+    margin: 50px 40px 20px 40px;
     height: 400px;
     width: 750px;
     display: flex;
@@ -204,18 +208,18 @@ p2{
     width: 200px;
 }
 
-.falling{
+#falling{
     transform: translateY(0);
     animation-name: ingredientfall;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    /* animation-play-state: paused; */
+    animation-play-state: paused;
 }
 
 @keyframes ingredientfall {
     0%{
-        transform: translateY(0);
+        transform: translateY(-1000px);
     }
     100%{
         transform: translateY(240px);

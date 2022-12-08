@@ -1,23 +1,23 @@
 const ingredients = {
-    "soy-wrap": {
+    "soy wrap": {
         "imageFile": "soy-wrap.png",
         "co2": 10,
         "fishBool": false,
         "vegBool": true
     },
-    "seaweed-wrap": {
+    "seaweed wrap": {
         "imageFile": "seaweed-wrap.png",
         "co2": 15,
         "fishBool": false,
         "vegBool": true
     },
-    "brown-rice": {
+    "brown rice": {
         "imageFile": "brown-rice.png",
         "co2": 54,
         "fishBool": false,
         "vegBool": true
     },
-    "white-rice": {
+    "white rice": {
         "imageFile": "white-rice.png",
         "co2": 54,
         "fishBool": false,
@@ -95,7 +95,7 @@ const ingredients = {
         "fishBool": false,
         "vegBool": true
     }  
-    "seaweed-salad": {
+    "seaweed salad": {
         "imageFile": "seaweed-salad.png",
         "co2": 60,
         "fishBool": false,
@@ -107,7 +107,7 @@ const ingredients = {
         "fishBool": true,
         "vegBool": false
     }    
-    "sesame-seeds": {
+    "sesame seeds": {
         "imageFile": "sesame-seeds.png",
         "co2": 25,
         "fishBool": false,
@@ -119,7 +119,7 @@ const ingredients = {
         "fishBool": true,
         "vegBool": false
     }  
-    "tempura-flakes": {
+    "tempura flakes": {
         "imageFile": "tempura-flakes.png",
         "co2": 8,
         "fishBool": false,

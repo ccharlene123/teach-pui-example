@@ -12,7 +12,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-        <script src="../js/app.js"></script>
+        <script defer src="../js/ingredientsData.js"></script>
+        <script defer src="../js/app.js"></script>
 
     </head>
 
@@ -31,67 +32,67 @@
 
             <div class="bottom">
                 <div class="builder">
-                    <div class="falling">
-                        <img src="../assets/seaweed-wrap.png" width="500px">
+                    <div id="falling">
+                        <img src="../assets/seaweed-wrap.png" class="fallingImg" width="500px">
                     </div>
                 </div>
                 <div class="options">
                     <div id="scroll">
                         <h2>1. Choose Your Wrap</h2>
                         <div class="ingredient-row">
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 soy wrap
                                 <img src="../assets/soy-wrap.png" class="ingredient-img" alt="soy wrap" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 seaweed wrap
                                 <img src="../assets/seaweed-wrap.png" class="ingredient-img" alt="seaweed wrap" width="150px">
                             </button>
                         </div>
                         <h2>2. Rice</h2>
                         <div class="ingredient-row">
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 brown rice
                                 <img src="../assets/brown-rice.png" class="ingredient-img" alt="brown rice" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 white rice
                                 <img src="../assets/white-rice.png" class="ingredient-img" alt="white rice" width="150px">
                             </button>
                         </div>
                         <h2>3. Protein</h2>
                         <div class="ingredient-row">
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 salmon
                                 <br>
                                 <img src="../assets/salmon.png" alt="salmon" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 tuna
                                 <br>
                                 <img src="../assets/tuna.png" alt="tuna" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 yellowtail
                                 <br>
                                 <img src="../assets/yellowtail.png" alt="yellowtail" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 shrimp
                                 <br>
                                 <img src="../assets/shrimp.png" alt="shrimp" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 eggs
                                 <br>
                                 <img src="../assets/eggs.png" alt="eggs" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 tofu
                                 <br>
                                 <img src="../assets/tofu.png" alt="tofu" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 krab
                                 <br>
                                 <img src="../assets/krab.png" alt="krab" width="150px">
@@ -99,32 +100,32 @@
                         </div>
                         <h2>4. Veggies</h2>
                         <div class="ingredient-row">
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 avocado
                                 <br>
                                 <img src="../assets/avocado.png" alt="avocado" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 lettuce
                                 <br>
                                 <img src="../assets/lettuce.png" alt="lettuce" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 carrots
                                 <br>
                                 <img src="../assets/carrots.png" alt="carrots" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 cucumber
                                 <br>
                                 <img src="../assets/cucumber.png" alt="cucumber" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 corn
                                 <br>
                                 <img src="../assets/corn.png" alt="corn" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 seaweed salad
                                 <br>
                                 <img src="../assets/seaweed-salad.png" alt="seaweed salad" width="150px">
@@ -132,22 +133,22 @@
                         </div>
                         <h2>5. Toppings</h2>
                         <div class="ingredient-row">
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 masago
                                 <br>
                                 <img src="../assets/masago.png" alt="masago" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 sesame seeds
                                 <br>
                                 <img src="../assets/sesame.png" class="ingredient-img" alt="sesame seeds" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 furikake
                                 <br>
                                 <img src="../assets/furikake.png" alt="furikake" width="150px">
                             </button>
-                            <button type="button" class="ingredient">
+                            <button type="button" onclick="runAnimation()" class="ingredient">
                                 tempura flakes
                                 <br>
                                 <img src="../assets/tempura-flakes.png" alt="tempura flakes" width="150px">
