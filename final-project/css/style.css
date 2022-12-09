@@ -3,13 +3,19 @@ body {
     display: flex;
 }
 
-h1 {
+h1, #analysisH{
     font-family: 'Coiny', sans-serif;
     font-size: 100px;
     line-height: 75%;
     -webkit-text-fill-color: rgb(52, 52, 52);
     -webkit-text-stroke: 1px rgb(254, 254, 254);
     width: 100%;
+}
+
+#analysisH{
+    text-align: center;
+    -webkit-text-fill-color: rgb(52, 52, 52);
+    -webkit-text-stroke: 3px rgb(254, 254, 254);
 }
 
 h3{
@@ -54,6 +60,14 @@ p{
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    width: 200px;
+}
+
+#start-btn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .whole{
@@ -133,6 +147,7 @@ p{
     width: 750px;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 #scroll{
@@ -195,9 +210,11 @@ p{
     display: flex;
 }
 
-p2{
+.p2, .p3, .p4{
     font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-size: 20px;
+    line-height: 180%;
+    text-align: left;
 }
 
 .burrito{
@@ -218,6 +235,10 @@ p2{
     width: 200px;
 }
 
+.fallingImg{
+    display: grid;
+}
+
 #falling, .fallingToo{
     transform: translateY(0);
     animation-name: ingredientfall;
@@ -226,13 +247,38 @@ p2{
     animation-timing-function: ease-in;
     animation-play-state: paused;
     z-index: 1;
+    position: absolute;
 }
 
 @keyframes ingredientfall {
     0%{
-        transform: translateY(-1000px);
+        transform: translateY(-100);
     }
     100%{
         transform: translateY(240px);
+    }
+}
+
+@media (max-width: 1300px){
+    h1{
+        font-size: 80px;
+        width: 70%;
+    }
+    h3{
+        font-size: 20px;
+        width: 70%;
+
+    }
+    h2{
+        font-size: 20px;
+    }
+    .p2{
+        font-size: 18px;
+    }
+    .p3{
+        font-size: 18px;
+    }
+    .p4{
+        font-size: 18px;
     }
 }

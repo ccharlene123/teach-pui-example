@@ -1,26 +1,23 @@
-class Ingredient { 
-    constructor(name, imgSrc, co2, fishBool, vegBool){
-        this.name = name;
-        this.imgSrc = imgSrc;
-        this.co2 = co2;
-        this.fishBool = fishBool;
-        this.vegBool = vegBool;
-    }
-}
-
 let finishedBurrito = []
 
 function runAnimation(button){
+    //get innertext of p tag of the button
     let key = button.querySelector('p').innerText;
+    //get the falling div
     let grabDiv = document.getElementById("falling");
     console.log(grabDiv)
-    //let newDiv = document.createElement('div');
-   //newDiv.className = "falling";
+    //create an img element
     let newIngredient = document.createElement('img');
+    //append newly created img element to the div
     grabDiv.appendChild(newIngredient);
+    grabDiv.style.position = "absolute"
     newIngredient.className = "fallingImg";
     newIngredient.src = '../assets/' + ingredients[key].imageFile;
+    newIngredient.style.width = "400px"
+    newIngredient.style.position = "relative"
+    //change animation state to running
     document.getElementById("falling").style.animationPlayState = "running";
+    //push selected ingredient (and its data) to finishedBurrito array
     finishedBurrito.push(ingredients[key]);
     console.log(finishedBurrito)
 }
@@ -29,57 +26,25 @@ function resetAnimation(){
     document.getElementById("falling").style.animationPlayState = "paused";
 }
 
-/*
-
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const bunType = params.get("roll");
-
-const nameElement = document.querySelector('#product-name');
-nameElement.innerText = bunType + ' cinnamon roll'
-
-const basePrice = rolls[bunType].basePrice;
-priceChange();
-
-const rollImage = document.querySelector('.product-image');
-rollImage.src = '../assets/' + rolls[bunType].imageFile;
-
-function addToCart(){
-    const newRoll = new Roll(bunType, glazingOption.options[glazingOption.selectedIndex].text, packOption.options[packOption.selectedIndex].text, basePrice);
-    cart.push(newRoll);
-    console.log(cart);
-    saveToLocalStorage();
+//save everything that is in finishedBurrito array to session storage, onclick
+function saveToSessionStorage(){
+    const arrayString = JSON.stringify(finishedBurrito);
+    sessionStorage.setItem('burritoItems', arrayString);
+    sumCarbonDioxide();
 }
 
-//session storage: (use remove item from session storage when start over button is clicked)
-sessionStorage.setItem("lastname", "Smith");
-sessionStorage.getItem("lastname");
+const parsedArray = JSON.parse(sessionStorage.getItem('burritoItems'));
 
-function saveToLocalStorage() {
-    const cartArrayString = JSON.stringify(cart);
-    console.log(cartArrayString);
+let carbonDioxide = 0
 
-    localStorage.setItem('cartItems', cartArrayString);
-}
-
-function retrieveFromLocalStorage() {
-    const cartArrayString = localStorage.getItem('cartItems');
-    const cartArray = JSON.parse(cartArrayString);
-    for (const cartData of cartArray) {
-        const newRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+function sumCarbonDioxide(){
+    for (let i = 0; i < parsedArray.length; i++) {
+        let ingredientCO2 = parsedArray[i].co2;
+        carbonDioxide += ingredientCO2;
     }
+    console.log(carbonDioxide)
 }
+sumCarbonDioxide();
 
-if (localStorage.getItem('cartItems') != null) {
-    retrieveFromLocalStorage();
-}
-}
-
-make variables for co2, fish, and vegetarian
-
-let carbonDioxide = 
-
-"used" + co2 + "g carbon dioxide"
-"Used" + fish + " types of fish or fish byproducts"
-"Used" + veggie + " types of vegetarian ingredients"
-*/
+let jS = document.querySelector('.p2');
+jS.innerText = "Used " + carbonDioxide + "g of Carbon Dioxide"
