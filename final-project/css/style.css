@@ -218,13 +218,14 @@ p2{
     width: 200px;
 }
 
-#falling{
+#falling, .fallingToo{
     transform: translateY(0);
     animation-name: ingredientfall;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     animation-play-state: paused;
+    z-index: 1;
 }
 
 @keyframes ingredientfall {

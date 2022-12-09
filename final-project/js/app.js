@@ -8,49 +8,28 @@ class Ingredient {
     }
 }
 
+let finishedBurrito = []
+
 function runAnimation(button){
-    let animationImg = document.querySelector('.fallingImg');
     let key = button.querySelector('p').innerText;
-    console.log(key);
-    console.log(ingredients[key])
-    animationImg.src = '../assets/' + ingredients[key].imageFile;
+    let grabDiv = document.getElementById("falling");
+    console.log(grabDiv)
+    //let newDiv = document.createElement('div');
+   //newDiv.className = "falling";
+    let newIngredient = document.createElement('img');
+    grabDiv.appendChild(newIngredient);
+    newIngredient.className = "fallingImg";
+    newIngredient.src = '../assets/' + ingredients[key].imageFile;
     document.getElementById("falling").style.animationPlayState = "running";
+    finishedBurrito.push(ingredients[key]);
+    console.log(finishedBurrito)
+}
+
+function resetAnimation(){
+    document.getElementById("falling").style.animationPlayState = "paused";
 }
 
 /*
-
-let ingredient = document.querySelector('.ingredient');
-ingredient.addEventListener('click', runAnimation);
-
-$('.ingredient').onClick(function(){
-    $('.builder').addClass('.falling');
-});
-
-let IngredientsArray = [
-    new Ingredient('soy wrap', 'soy-wrap', 10, false, true),
-    new Ingredient('seaweed wrap', 'seaweed-wrap', 15, false, true),
-    new Ingredient('brown rice', 'brown-rice', 54, false, true),
-    new Ingredient('white rice', 'white-rice', 54, false, true),
-    new Ingredient('salmon', 'salmon', 479, true, false),
-    new Ingredient('tuna', 'tuna', 1016, true, false),
-    new Ingredient('yellowtail', 'yellowtail', 436, true, false),
-    new Ingredient('shrimp', 'shrimp', 1775, true, false),
-    new Ingredient('eggs', 'eggs', 270, false, true),
-    new Ingredient('tofu', 'tofu', 148, false, true),
-    new Ingredient('krab', 'krab', 400, true, false),
-    new Ingredient('avocado', 'avocado', 204, false, true),
-    new Ingredient('lettuce', 'lettuce', 48, false, true),
-    new Ingredient('carrots', 'carrots', 34, false, true),
-    new Ingredient('cucumber', 'cucumber', 58, false, true),
-    new Ingredient('corn', 'corn', 32, false, true),
-    new Ingredient('seaweed salad', 'seaweed-salad', 60, false, true),
-    new Ingredient('masago', 'masago', 30, true, false),
-    new Ingredient('sesame seeds', 'sesame-seeds', 25, false, true),
-    new Ingredient('furikake', 'furikake', 28, true, false),
-    new Ingredient('tempura flakes', 'tempura-flakes', 8, false, true),
-]
-
-const cart = [];
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
